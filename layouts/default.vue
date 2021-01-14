@@ -4,23 +4,15 @@
  * @Author: wcd
  * @Date: 2021-01-14 11:53:20
  * @LastEditors: wcd
- * @LastEditTime: 2021-01-14 12:01:25
+ * @LastEditTime: 2021-01-14 14:31:11
 -->
 <template>
   <div>
-    <Navbar></Navbar>
     <nuxt />
   </div>
 </template>
 
-<script>
-import Navbar from '@/components/Navbar'
-export default {
-  components: {
-    Navbar,
-  },
-}
-</script>
+<script></script>
 
 <style>
 html {
