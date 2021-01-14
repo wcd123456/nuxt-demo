@@ -22,7 +22,9 @@
   "dependencies": {
     "@nuxtjs/auth": "^4.8.5",
     "@nuxtjs/axios": "^5.3.6",
-    "nuxt": "^2.0.0"
+    "dayjs": "^1.8.20",
+    "nuxt": "^2.0.0",
+    "qs": "^6.9.1"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",

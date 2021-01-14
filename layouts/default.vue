@@ -1,65 +1,149 @@
-<!--
- * @Descripttion: 
- * @version: 
- * @Author: wcd
- * @Date: 2021-01-14 11:53:20
- * @LastEditors: wcd
- * @LastEditTime: 2021-01-14 14:31:11
--->
 <template>
   <div>
+    <imooc-header></imooc-header>
+    <imooc-panel></imooc-panel>
     <nuxt />
+    <imooc-footer></imooc-footer>
   </div>
 </template>
 
-<script></script>
+<script>
+import Panel from '~/components/Panel'
+import Header from '~/components/Header'
+import Footer from '~/components/Footer'
+export default {
+  components: {
+    'imooc-panel': Panel,
+    'imooc-header': Header,
+    'imooc-footer': Footer
+  }
+}
+</script>
 
-<style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+<style lang="scss">
+@import 'assets/css/global.css';
+@import 'assets/css/layui-layer/layer.css';
+// @import "assets/css/utilities.scss";
+
+// 公用样式
+.svg {
+  position: relative;
+  top: -4px;
+}
+.gray {
+  color: #999;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
+.orange {
+  color: #ff5722;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+.pull-right {
+  float: right !important;
 }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
+// .pd20 {
+//   padding: 20px;
+// }
+
+@for $i from 0 to 5 {
+  .pd#{$i} {
+    padding: $i * 10 + px !important;
+  }
+  .pt#{$i} {
+    padding-top: $i * 10 + px !important;
+  }
+  .pl#{$i} {
+    padding-left: $i * 10 + px !important;
+  }
+  .pr#{$i} {
+    padding-right: $i * 10 + px !important;
+  }
+  .pb#{$i} {
+    padding-bottom: $i * 10 + px !important;
+  }
+  .mr#{$i} {
+    margin-right: $i * 10 + px !important;
+  }
+  .mt#{$i} {
+    margin-top: $i * 10 + px !important;
+  }
+  .ml#{$i} {
+    margin-left: $i * 10 + px !important;
+  }
 }
 
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
+.mt20 {
+  margin-top: -20px;
 }
 
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+
+.d-hide {
+  position: absolute;
+  overflow: hidden;
+  height: 0;
+}
+
+.d-flex {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  &.flex-start {
+    justify-content: flex-start;
+  }
+  &.flex-end {
+    justify-content: flex-end;
+  }
+  &.flex-center {
+    justify-content: center;
+  }
+}
+
+.link {
+  color: #01aaed;
+}
+.success {
+  color: #5fb878;
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes bounceOut {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+}
+
+.fade-leave-active {
+  animation: bounceOut 0.3s;
+}
+
+.fade-enter-active,
+.fade-enter-to {
+  animation: bounceIn 0.3s;
 }
 </style>
